@@ -1,0 +1,10 @@
+/target/
+/tools/
+.env
+.idea/
+*.iml
+.vscode/
+*.log
+*.jar
+*.jar.original
+data.db
