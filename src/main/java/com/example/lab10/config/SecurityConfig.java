@@ -20,10 +20,9 @@ public class SecurityConfig {
             .csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/hello").permitAll()
-                    .requestMatchers(HttpMethod.POST, "/users").permitAll()
-                    .requestMatchers(HttpMethod.POST, "/users/").permitAll()
-                    .requestMatchers("/error").permitAll()
-                    .anyRequest().authenticated()
+                .requestMatchers("/users/**").permitAll()
+                .requestMatchers("/error").permitAll()
+                .anyRequest().authenticated()
             )
             .httpBasic(basic -> {});
 
